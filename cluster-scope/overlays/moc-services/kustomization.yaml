@@ -1,3 +1,4 @@
 kind: Kustomization
 resources:
 - ../../bundles/crunchy-postgres-operator/
+- ../../../postgres/base/
