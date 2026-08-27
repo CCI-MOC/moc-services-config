@@ -4,3 +4,4 @@ resources:
 - ../../bundles/keycloak-operator/
 - ../../../postgres/base/
 - ../../../keycloak/keycloak-database-setup/
+- ../../../keycloak/base/
