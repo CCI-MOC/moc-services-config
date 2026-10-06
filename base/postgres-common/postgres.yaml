@@ -3,6 +3,9 @@ kind: PostgresCluster
 metadata:
   name: postgres
   namespace: postgres
+  annotations:
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   instances:
     - replicas: 1
