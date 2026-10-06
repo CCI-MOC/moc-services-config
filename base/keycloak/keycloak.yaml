@@ -1,0 +1,27 @@
+apiVersion: k8s.keycloak.org/v2beta1
+kind: Keycloak
+metadata:
+  name: keycloak
+  namespace: keycloak
+  labels:
+    app: keycloak
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  instances: 2
+  hostname:
+    hostname: sso.massopen.cloud
+  db:
+    vendor: postgres
+    host: postgres-primary.postgres.svc
+    port: 5432
+    usernameSecret:
+      name: postgres-pguser-keycloak
+      key: user
+    passwordSecret:
+      name: postgres-pguser-keycloak
+      key: password
+  http:
+    tlsSecret: keycloak-certificate
+  proxy:
+    headers: xforwarded
