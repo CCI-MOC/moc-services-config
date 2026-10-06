@@ -1,0 +1,17 @@
+apiVersion: external-secrets.io/v1
+kind: ExternalSecret
+metadata:
+  name: postgres-pguser-keycloak
+  namespace: keycloak
+spec:
+  refreshInterval: 1h
+  secretStoreRef:
+    kind: ClusterSecretStore
+    name: postgres
+  target:
+    creationPolicy: Owner
+    deletionPolicy: Retain
+    name: postgres-pguser-keycloak
+  dataFrom:
+    - extract:
+        key: postgres-pguser-keycloak
