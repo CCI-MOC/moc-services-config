@@ -25,3 +25,6 @@ spec:
     tlsSecret: keycloak-certificate
   proxy:
     headers: xforwarded
+  additionalOptions:
+    - name: log-console-output
+      value: json
