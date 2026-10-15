@@ -22,6 +22,7 @@ patches:
               # untended backups don't grow the bucket indefinitely.
               repo1-retention-full: "2"
               repo1-retention-full-type: count
+              repo1-cipher-type: aes-256-cbc
             repos:
               - name: repo1
                 schedules:

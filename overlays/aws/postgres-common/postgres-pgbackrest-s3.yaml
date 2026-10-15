@@ -18,6 +18,11 @@ spec:
           [global]
           repo1-s3-key={{ .application_key_id }}
           repo1-s3-key-secret={{ .application_key }}
+          repo1-cipher-pass={{ .repo1_cipher_pass }}
   dataFrom:
     - extract:
         key: b2-key/moc-services-backup-rw
+  data:
+    - secretKey: repo1_cipher_pass
+      remoteRef:
+        key: cluster/moc-services/postgres/pgbackrest-encryption-key
